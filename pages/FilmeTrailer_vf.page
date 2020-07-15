@@ -1,0 +1,13 @@
+<apex:page standardController="Filme__c">
+    
+    <style type="text/css">
+        html body.sfdcBody {
+        	padding: 0;
+		}
+        iframe{
+        	margin: 0 auto;
+    		display: block;
+        }
+    </style>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/{!Filme__c.Trailer__c}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+</apex:page>

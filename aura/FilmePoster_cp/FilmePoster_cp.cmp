@@ -1,0 +1,33 @@
+<aura:component controller="MovieCallout" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="posterId" type="String" />
+    
+    <article class="slds-card">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container slds-icon-standard-account" title="account">
+                        <lightning:icon iconName="custom:custom11" size="small" alternativeText="Indicates approval"/>
+                        <span class="slds-assistive-text">Poster</span>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <a href="javascript:void(0);" class="slds-card__header-link slds-truncate" title="Accounts">
+                            <span>Poster</span>
+                        </a>
+                    </h2>
+                </div>
+            </header>
+        </div>
+        <div style="text-align: center;padding: 15px 0px">
+            <aura:if isTrue="{!v.posterId}">
+                <img width="200" style="border:solid 1px grey" src="{!'https://image.tmdb.org/t/p/w440_and_h660_face/' + v.posterId}"></img>
+                <aura:set attribute="else">
+                    <p>Não foi encontrado nenhum poster.</p>
+                </aura:set>
+            </aura:if>
+        </div>
+    </article>
+</aura:component>
